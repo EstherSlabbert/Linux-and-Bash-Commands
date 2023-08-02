@@ -2,6 +2,7 @@
 
 - `whoami`: lists the current user's username.
 - `date`: outputs current date and time system is running according to.
+- `clear`: clears the terminal so that you are able to type in a fresh terminal with unnecessary distractions from previous commands.
 - `ls`: lists visible files and folders in current directory.
 - `ls -a`: lists invisible files and folders in current directory.
 - `ls -l`: list permissions and associated files.
