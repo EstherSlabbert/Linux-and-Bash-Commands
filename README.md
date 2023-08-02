@@ -1,7 +1,7 @@
 # Bash Commands
 
-[Charmm gui Unix lessons](https://charmm-gui.org/?doc=lecture&module=unix&lesson=1)
-
+- `whoami`: lists the current user's username.
+- `date`: outputs current date and time system is running according to.
 - `ls`: lists visible files and folders in current directory.
 - `ls -a`: lists invisible files and folders in current directory.
 - `ls -l`: list permissions and associated files.
@@ -37,20 +37,44 @@
 - `diff file1.txt file2.txt`: shows differences between 'file1.txt' and 'file2.txt' or nothing if there are no differences.
 - `chmod u+x file-name.txt`: changes permissions of the file 'file-name.txt', giving the user executable permissions for the file. (Before `+` or `-` you can choose `u` for user, `g` for group, and or `o` for other to specify who the change is for (can leave blank or use `a` or `ugo` for all). after the `+` or `-` you can choose `w` for write, `r` for read and or `x` for execute permissions. The `+` gives the permission(s) and the `-` removes the permission(s).)
 - `ps`: gives a list of processes running and their process IDs.
-- `kill process-id`: kills a process if you replace `process-id` with the actual process ID.
+- `kill process-id`: kills a process if you replace `process-id` with the actual process ID (PID).
 - `variable_name=variable_value`: sets a variable called `variable_name` to be the value `valriable_value`, and can be called on using `echo $variable_name` or `echo ${variable_name}` when working with multiple variables or punctuation. (Note: variables are case-sensitive, connot contain spaces or special characters except `_` and it must start with a letter. If you want things to be as they are without using an escape character then use `'` `'`)
 - `env` or `printenv`: lists all environment variables.
 - `printenv ENV_VAR` or `echo $ENV_VAR`: returns the value of the environment variable 'ENV_VAR'.
 - `grep "part-of-word-or-sentence" ./path/to/file-name.txt`: searches for and returns the line that contains "part-of-word-or-sentence" in './path/to/file-name.txt'. (using `-i` with grep makes its search case-insensitive, `-i "^ip"` will search for lines that start with 'ip', `-i "ip$"` will search for lines ending in 'ip', `-iv` will exclude the lines containing whatever is specified.)
 
+For additional information: [Charmm gui Unix lessons](https://charmm-gui.org/?doc=lecture&module=unix&lesson=1)
+
 ## Additional useful things to know
 
 `\` is an escape character. (Example use case: So if you have a file name and have not placed it in quotation marks that has a space you can use the escape character before the space to make sure the file name is correctly referenced. - can be used for other special characters that are not meant to perform a function)
 
-`|` is pipe operator and is used to connect commands together.
+`|` is a pipe operator and is used to connect commands together (form more specific or complex commands).
+
+Using `sudo` before a command elevates the command to have admin privileges.
+
+On Ubuntu systems environment variables are stored in the `.bashrc` file located at `~/.bashrc`.
+
+If using [`vi`](https://www.redhat.com/sysadmin/introduction-vi-editor) the commands are different.
+
+See [`nano`](https://www.hostinger.co.uk/tutorials/how-to-install-and-use-nano-text-editor) commands for additional file writing and [`sed`](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/) commands for editing files without even opening them.
+
+[`cURL`](https://blog.hubspot.com/website/curl-command#:~:text=Client%20URL%20) commands receive the URL to transfer data to — or receive data from — along with other options for different purposes (often seen when installing specific versions of software).
+
+The [`time`](https://www.hostinger.co.uk/tutorials/linux-time-command/) command can be used to see how long it takes to execute a certain command and usually follows the format `time command` (where `command` is an actual command).
+
+[`cron`](https://opensource.com/article/21/7/cron-linux#:~:text=The%20cron%20system%20is%20a,run%20commands%20on%20a%20schedule.&text=30%20readers%20like%20this.&text=SA%20Seth%20Kenlon-,The%20cron%20system%20is%20a%20method%20to%20automatically%20run%20commands,a%20file%20called%20a%20crontab.) commands are to deal with scheduled jobs.
+
+To securely log in to a remote machine and execute commands use `ssh user@host` (basic syntax).
 
 `#!/bin/bash` is the line necessary at the start of a shell script file. (`#!` is known as a shebang)
 
-`Ctrl` + `C` cancels a process.
+`Ctrl` + `C` cancels a process or logs you out.
+
+`exit` will end a terminal session or log you out if logged in to a remote session.
 
 `Ctrl` + `Z` suspends a process. `bg` moves the suspended process to the background. `fg` moves the process to the foreground.
+
+`Ctrl` + `D` logs you out of an interface.
+
+`Ctrl` + `Ins` copies the selected characters from the Bash terminal and `Shift` + `Ins` pastes into a Bash terminal.
