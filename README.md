@@ -43,6 +43,8 @@
 - `env` or `printenv`: lists all environment variables.
 - `printenv ENV_VAR` or `echo $ENV_VAR`: returns the value of the environment variable 'ENV_VAR'.
 - `grep "part-of-word-or-sentence" ./path/to/file-name.txt`: searches for and returns the line that contains "part-of-word-or-sentence" in './path/to/file-name.txt'. (using `-i` with grep makes its search case-insensitive, `-i "^ip"` will search for lines that start with 'ip', `-i "ip$"` will search for lines ending in 'ip', `-iv` will exclude the lines containing whatever is specified.)
+- `grep -q "part-of-word-or-sentence" file-name.txt`: runs grep command in quiet mode, so it returns no output.
+- `echo $?`: gets error or run code (usually between 1-155) for last command (0 if successful).
 
 For additional information: [Charmm gui Unix lessons](https://charmm-gui.org/?doc=lecture&module=unix&lesson=1)
 
@@ -69,6 +71,10 @@ The [`time`](https://www.hostinger.co.uk/tutorials/linux-time-command/) command 
 To securely log in to a remote machine and execute commands use `ssh user@host` (basic syntax).
 
 `#!/bin/bash` is the line necessary at the start of a shell script file. (`#!` is known as a shebang)
+
+`*` is a wild card character, meaning it is used as a placeholder to signify all or everthing (often used with file extensions e.g. `*.txt` means all .txt files in the location specified).
+
+`&&` is used to run 2 commands from one line (e.g. `sudo apt-get update -y && sudo apt-get upgrade -y` gets updates and upgrades on linux).
 
 `Ctrl` + `C` cancels a process or logs you out.
 
